@@ -1,0 +1,23 @@
+component 元件
+
+1.component 元件定義
+  a.接在createApp後方， mount 前 進行定義
+  b.需指定一個名稱
+
+2. component 元件註冊
+ a.全域註冊
+ b.區域註冊
+
+3. 元件寫在html(屬性及標籤) 只能小寫 或 " - "  ex: alert-template， 值能小駝峰顯示
+4. 元件模板: template, x-template(寫在script type=text/x-template id="")
+
+
+
+
+
+props 資料傳遞 (由外部傳入內部元件)
+1.技巧: 前內(內部元件)後外(外部資料)
+2.單向數據流，不可以修改外部資料
+
+
+emit 方法觸發事件(由內部元件傳出去外部)
