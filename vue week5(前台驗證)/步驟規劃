@@ -1,0 +1,17 @@
+
+- 準備版型 (切版型) 
+- 準備產品列表  (get) 
+- 製作彈出 MODAL  
+- 取得單一產品  (get)
+    取得單一產品資訊: 查看最多按鈕(openModal(product)) 觸發 openModal(item)內的api
+    資料傳遞(取得產品api後的資料): 利用props傳遞資料 ， 將app.product(父層)和已註冊userProductModal元件內的productModal.js(子層)，進行連結
+- 加入購物車 (post)
+  1.加入購物車 (post) 串接api  帶入 {data: {"product_id": , "qty":1(數量預設為1)} }
+  2.查看更多按鈕(打開productModal)加入購物車，透過 $emit觸發addcart方法  把userProductModal(子層)資料傳遞到app(父層上) 
+- 準備購物車列表 (get)
+   取得購物車列表 
+- 更新購物車  (put) 
+- 讀取效果
+   透過 :disabled="loadingStatus.loadingItem === product.id" (確認是否點擊到product.id,如果是就關閉讀取效果)
+   切換讀取效果: 在點擊到查看更多按鈕和加入購物車按鈕觸發 openModal 方法  
+- 結帳  (post)

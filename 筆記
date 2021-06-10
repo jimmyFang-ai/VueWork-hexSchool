@@ -13,11 +13,33 @@ component 元件
 
 
 
+資料傳遞方法
+
+(單向數據流) 單一傳遞
+a. props 資料傳遞 (由外部傳入內部元件)
+ 1.技巧: 前內(內部元件)後外(外部資料)
+ 2.單向數據流，不可以修改外部資料
+
+(單向數據流) 單一傳遞
+b. emit 方法觸發事件 (由內部元件傳出去外部)
+
+week 5 筆記
+
+c. refs (利用"ref" 建立dom節點去操作資料傳遞)
+操作DOM元素 refs (vue) , ex: js語法 el.document.querySelector('.attritube')
+1. html: 標籤上增加 "ref 屬性標籤" ， js: 在mouted()內呼叫"$refs"，因為要讓mouted完全載入，並讓畫面生成dom節點再來"操縱$refs"
+2. 操作方法: 在app(父層)內建立"methods"，觸發方法去操作 $refs 的DOM元素 或 在 mouted內操作 $refs 的DOM元素
+
+d. watch 監聽資料傳遞 (監聽單一 “變數” 觸發事件, 該函式可同時操作多個變數)
+1. html: 在html結構內，利用v-model綁定資料， js: 在app(父層)建立 wacth: { 建立監聽資料(){} }
+2. 監聽資料的值有更動才會觸發 watch監聽事件內容
 
 
-props 資料傳遞 (由外部傳入內部元件)
-1.技巧: 前內(內部元件)後外(外部資料)
-2.單向數據流，不可以修改外部資料
+e. mitt (跨元件傳遞資料套件) (不是vue3本身方法)
+  cdn:  https://unpkg.com/mitt/dist/mitt.umd.js
+
+1. js: 註冊mitt元件方法  const emitter =  mitt();
+2. 跨元件傳遞:    a元件 (接收資料): "監聽事件"  在生命週期初始化 created(){ emittr.on('監聽事件', (參數)=> { } )}
+                  b元件 (發送資料 ex:按鈕): "發送事件"  在methods: { fn() { emitter.emit('監聽事件'，參數) } }
 
 
-emit 方法觸發事件(由內部元件傳出去外部)

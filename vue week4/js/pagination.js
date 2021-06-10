@@ -23,3 +23,5 @@ export default {
       console.log(this.page);
   }
 }
+
+document.querySelector()
